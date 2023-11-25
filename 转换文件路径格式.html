@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>将文件路径中的反斜杠转换为正斜杠</h1>
+	
+	<div>
+		<textarea name="input" id="inp" cols="150" rows="10"></textarea>
+	</div>
+
+	<div>
+		<button>转换</button>
+	</div>
+
+	<div>
+		<textarea name="output" id="oup" cols="150" rows="10"></textarea>
+	</div>
+
+	<script>
+		var btn = document.querySelector('button');
+		var input = document.querySelector('#inp');
+		var output = document.querySelector('#oup');
+
+		btn.onclick = function(){
+			var str = input.value;
+			var reg = /\\/g;
+			var result = str.replace(reg,'/');
+			output.value = result;
+		}
+	</script>
+
+</body>
+</html>
+
